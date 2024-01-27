@@ -1,4 +1,6 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import { FunctionComponent } from "react";
 import { GoGear } from "react-icons/go";
 import { GrSchedules } from "react-icons/gr";
@@ -14,6 +16,8 @@ import { TiMessages } from "react-icons/ti";
 interface SidebarProps {}
 
 const Sidebar: FunctionComponent<SidebarProps> = () => {
+  const router = useRouter();
+
   return (
     <div className="pb-12 min-h-screen">
       <div className="space-y-4 py-4">
@@ -23,6 +27,7 @@ const Sidebar: FunctionComponent<SidebarProps> = () => {
             <Button
               variant={"ghost"}
               className="w-full justify-start rounded-none"
+              onClick={() => router.push("/")}
             >
               <IoHomeOutline className="mr-2 text-lg rounded-none hover:text-primary" />
               Home
@@ -51,6 +56,7 @@ const Sidebar: FunctionComponent<SidebarProps> = () => {
             <Button
               variant={"ghost"}
               className="w-full justify-start rounded-none"
+              onClick={() => router.push("/job-listings")}
             >
               <HiOutlineClipboardDocumentList className="mr-2 text-lg rounded-none hover:text-primary" />
               Job Listing
