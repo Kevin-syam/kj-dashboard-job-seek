@@ -1,3 +1,4 @@
+import ButtonActionTable from "@/components/organisms/ButtonActionTable";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +12,7 @@ import {
 } from "@/components/ui/table";
 import { JOB_LISTING_COLUMNS, JOB_LISTING_DATA } from "@/constants";
 import { MoreVertical, icons } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { FunctionComponent } from "react";
 
 interface JobListingPageProps {}
@@ -47,9 +49,7 @@ const JobListingPage: FunctionComponent<JobListingPageProps> = () => {
                   {item.applicants} / {item.needs}
                 </TableCell>
                 <TableCell>
-                  <Button size="icon" variant="outline">
-                    <MoreVertical className="w-4 h-4" />
-                  </Button>
+                  <ButtonActionTable url="/job-detail/1" />
                 </TableCell>
               </TableRow>
             ))}
