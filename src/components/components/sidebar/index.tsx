@@ -78,6 +78,7 @@ const Sidebar: FunctionComponent<SidebarProps> = () => {
           <Button
             variant={"ghost"}
             className="w-full justify-start rounded-none"
+            onClick={() => router.push("/settings")}
           >
             <GoGear className="mr-2 text-lg rounded-none hover:text-primary" />
             Settings

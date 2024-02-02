@@ -35,3 +35,22 @@ export const jobFormSchema = z.object({
     .array()
     .nonempty({ message: "Benefits must at least 1 benefit" }),
 });
+
+export const overviewFormSchema = z.object({
+  image: z
+    .any()
+    .refine((item: any) => item?.name, { message: "Image is required" }),
+  name: z.any({ required_error: "Name is required" }),
+  website: z.string({ required_error: "Web is Required" }),
+  location: z.string({ required_error: "Location is Required" }),
+  employee: z.string({ required_error: "Employee is Required" }),
+  industry: z.string({ required_error: "Industry is Required" }),
+  dataFounded: z.string({ required_error: "Data Founded is Required" }),
+  techStack: z
+    .string()
+    .array()
+    .nonempty({ message: "Tech stack must be at least 1 data" }),
+  description: z.string({
+    required_error: "Description is required",
+  }),
+});
